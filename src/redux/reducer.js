@@ -5,8 +5,7 @@ const INITIAL_STATE = {
     tabCount: 1,
     tabs: ['S1'],
     currentTab: 'S1',
-    commands: {},
-    actionHistory: [] // New state to store action history
+    commands: {}
 };
 
 const reducer = (state = INITIAL_STATE, action) => {
@@ -26,15 +25,20 @@ const reducer = (state = INITIAL_STATE, action) => {
                 return state;
             }
 
+            // Filter tab from tabs array
             const filteredTab = state.tabs.filter(
                 (tabId) => tabId !== action.payload
             );
 
+            // Check if currentTab is removed or not
             let currTabIndex = filteredTab.indexOf(state.currentTab);
 
+            // If current is removed, make the previous one current
             if (currTabIndex === -1) {
                 currTabIndex = filteredTab.length - 1;
             }
+
+            // Delete sprint from command too
 
             const cmds = state.commands;
 
@@ -75,21 +79,9 @@ const reducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 commands: {
-                    ...state.commands,
+                    ...commands,
                     [action.payload.sprite]: action.payload.cmd
                 }
-            };
-
-        case actionTypes.ADD_ACTION:
-            return {
-                ...state,
-                actionHistory: [...state.actionHistory, action.payload]
-            };
-
-        case actionTypes.CLEAR_ACTIONS:
-            return {
-                ...state,
-                actionHistory: []
             };
 
         default:

@@ -13,16 +13,9 @@ const commandParser = async (commands) => {
     }
 };
 
-const commandRepeater = async (commands, gen) => {
-    console.log(commands);
-    while (gen.next()) {
-        await commandParser(commands);
-    }
-};
-
 const commandRunner = async (cmd) => {
-    if (cmd.cmdID.includes('Looks')) return looksCommands(cmd.cmdText);
-    if (cmd.cmdID.includes('Motion')) return motionCommands(cmd.cmdText);
+    if (cmd?.cmdID.includes('Looks')) return looksCommands(cmd.cmdText);
+    if (cmd?.cmdID.includes('Motion')) return motionCommands(cmd.cmdText);
 };
 
 export default commandParser;

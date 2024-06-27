@@ -1,27 +1,37 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import CatSprite from './CatSprite';
-import { useSelector } from 'react-redux';
 import mergeSprite from '../utils/mergeSprite';
 import commandParser from '../utils/commandParser';
 import toast from 'react-hot-toast';
 
-export default function PreviewArea() {
+const PreviewArea = () => {
     const commands = useSelector((state) => state.commands);
+    const dispatch = useDispatch();
 
     const reset = () => {
         const cat = document.querySelector('#movingCat');
         cat.style = '';
         toast.success('Reset', { position: 'bottom-left' });
     };
+
     const execute = async (e) => {
-        if (e.target.dataset.run) await commandParser(mergeSprite(commands));
+        if (e.target.dataset.run) {
+            // Merge and execute current commands
+            await commandParser(mergeSprite(commands));
+        }
         if (e.target.dataset.reset) reset();
     };
 
     return (
         <div
             onClick={execute}
-            className="flex-none w-full h-full overflow-y-auto p-2"
+            className="flex-none w-full h-full overflow-y-auto p-2 relative"
+            style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center'
+            }}
         >
             <CatSprite id="movingCat" className="transition-all" />
             <button
@@ -38,4 +48,6 @@ export default function PreviewArea() {
             </button>
         </div>
     );
-}
+};
+
+export default PreviewArea;
