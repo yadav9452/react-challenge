@@ -28,5 +28,5 @@ Follow these instructions to set up and run the project locally.
 
 1. **Clone the Repository:**
    ```sh
-   git clone https://bitbucket.org/shiva-nandan/scratch-starter-project/src/master/
-   cd scratch-starter-project
+   git clone https://github.com/yadav9452/react-challenge.git/src/master
+   cd react-challenge
