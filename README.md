@@ -1,22 +1,32 @@
-# Scratch Web Block Editor
+# Visual Code Editor for JavaScript
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/6df56dcb-cd37-45c5-bdb0-53b3b70d3b0d/deploy-status)](https://app.netlify.com/sites/scratch-web-editor/deploys)
+This project is a visual code editor for JavaScript inspired by MIT Scratch. The application allows users to drag and drop code blocks to create scripts, execute them on demand, and replay the history of actions performed on a sprite.
 
-### Deployed @ [Vercel](https://scratch-web-editor.vercel.app/) && [Netlify](https://scratch-web-editor.netlify.app/)
+## Features
 
-### Getting Started
+- **Drag and Drop Functionality**: Users can drag and drop blocks from the toolbox into the scripting area.
+- **Motion and Looks Blocks**: Implemented blocks for basic motion and appearance changes.
+- **Execute Scripts**: Users can run the scripts they create.
+- **Replay Actions**: Users can replay the history of actions performed on the sprite.
 
-1. `git clone https://github.com/abhishekraj272/Scratch-Web-Editor.git`
-2. `cd Scratch-Web-Editor`
-3. `yarn install`
-4. `yarn start`
+## Technologies Used
 
-### Tech Used
+- **ReScript React**: For building the UI components.
+- **TailwindCSS**: For styling the application.
+- **react-dnd**: For implementing drag and drop functionality.
 
-1. React
-2. Tailwind CSS
-3. Webpack
-4. Babel
-5. React Hot Toast
-6. Redux
-7. HTMl
+## Getting Started
+
+Follow these instructions to set up and run the project locally.
+
+### Prerequisites
+
+- Node.js (v14.x or later)
+- npm (v6.x or later)
+
+### Installation
+
+1. **Clone the Repository:**
+   ```sh
+   git clone https://bitbucket.org/shiva-nandan/scratch-starter-project/src/master/
+   cd scratch-starter-project
