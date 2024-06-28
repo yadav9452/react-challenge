@@ -28,5 +28,5 @@ Follow these instructions to set up and run the project locally.
 
 1. **Clone the Repository:**
    ```sh
-   git clone https://github.com/yadav9452/react-challenge.git/src/master
+   git clone https://github.com/yadav9452/react-challenge.git
    cd react-challenge
