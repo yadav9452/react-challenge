@@ -17,14 +17,12 @@ export default function App() {
         >
             <WelcomeToast />
             <div className="h-screen overflow-hidden flex flex-col md:flex-row">
-                <div className="flex-1 h-1/2 md:h-screen overflow-hidden flex flex-row bg-white border-t border-r border-gray-200 rounded-tl-xl mt-2 md:mt-0 ml-0 md:ml-2">
-                    <Sidebar className="w-1/4 bg-red-100" />
-                    {/* Adjusted MidArea to take less width */}
-                    <MidArea className="w-2/3" />
+                <div className="flex flex-col md:flex-row flex-1 h-full overflow-hidden bg-white border-t border-r border-gray-200 rounded-tl-xl mt-2 md:mt-0 ml-0 md:ml-2">
+                    <Sidebar className="w-full md:w-1/4 bg-red-100" />
+                    <MidArea className="w-full md:w-2/3 lg:w-1/2" />
                 </div>
-                <div className="w-full md:w-1/2 h-1/2 md:h-screen overflow-hidden flex flex-row bg-white border-t border-l border-gray-200 rounded-tl-xl mt-2 md:mt-0 ml-0 md:ml-2">
-                    {/* Adjusted PreviewArea to take more width */}
-                    <PreviewArea className="w-full md:w-full" />
+                <div className="w-full md:w-1/2 lg:w-1/3 h-full overflow-hidden bg-white border-t border-l border-gray-200 rounded-tl-xl mt-2 md:mt-0 ml-0 md:ml-2">
+                    <PreviewArea className="w-full h-full" />
                 </div>
             </div>
         </div>
